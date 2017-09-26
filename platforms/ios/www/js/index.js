@@ -36,6 +36,7 @@ bindEvents: function () {
 onDeviceReady: function() {
     //app.receivedEvent('deviceready');
     document.getElementById("bookmarkBtn").onclick = app.addBookmark;
+    document.getElementById("requestBtn").onclick = app.makeRequest;
 },
     
     // Update DOM on a Received Event
@@ -48,6 +49,15 @@ receivedEvent: function(id) {
     receivedElement.setAttribute('style', 'display:block;');
     
     console.log('Received Event: ' + id);
+},
+    
+makeRequest: function() {
+    var xhttp = new XMLHttpRequest();
+    xhttp.open("POST", "http://jsonplaceholder.typicode.com/users/1", false);
+    xhttp.setRequestHeader("Content-type", "application/json");
+    xhttp.send();
+    var response = JSON.parse(xhttp.responseText);
+    alert(response)
 },
     
 addBookmark: function() {

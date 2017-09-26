@@ -17,6 +17,7 @@
 		86445CE81F7A09E900011DBC /* MyTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86445CE71F7A09E900011DBC /* MyTableViewController.m */; };
 		86445CEC1F7A0A7A00011DBC /* MyHybridPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 86445CEB1F7A0A7A00011DBC /* MyHybridPlugin.m */; };
 		86445CEF1F7A115500011DBC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86445CEE1F7A115500011DBC /* Main.storyboard */; };
+		86445CF61F7AB8DF00011DBC /* plugin.xml in Resources */ = {isa = PBXBuildFile; fileRef = 86445CF51F7AB8DF00011DBC /* plugin.xml */; };
 		CCEDC3A4B1804B909E5010DF /* CDVLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 8652A6EF81D0451A96D97EDA /* CDVLogger.m */; };
 /* End PBXBuildFile section */
 
@@ -65,6 +66,7 @@
 		86445CEA1F7A0A7A00011DBC /* MyHybridPlugin.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyHybridPlugin.h; sourceTree = "<group>"; };
 		86445CEB1F7A0A7A00011DBC /* MyHybridPlugin.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyHybridPlugin.m; sourceTree = "<group>"; };
 		86445CEE1F7A115500011DBC /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		86445CF51F7AB8DF00011DBC /* plugin.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = plugin.xml; sourceTree = "<group>"; };
 		8652A6EF81D0451A96D97EDA /* CDVLogger.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = CDVLogger.m; path = "cordova-plugin-console/CDVLogger.m"; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* DemoApp-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "DemoApp-Info.plist"; path = "DemoApp/DemoApp-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = SOURCE_ROOT; };
 		94721700CC5F41C0AF63DE05 /* CDVLogger.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = CDVLogger.h; path = "cordova-plugin-console/CDVLogger.h"; sourceTree = "<group>"; };
@@ -193,6 +195,7 @@
 			children = (
 				F840E1F0165FE0F500CFE078 /* config.xml */,
 				301BF56E109A69640062928A /* www */,
+				86445CF51F7AB8DF00011DBC /* plugin.xml */,
 			);
 			name = Staging;
 			sourceTree = "<group>";
@@ -276,6 +279,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				86445CF61F7AB8DF00011DBC /* plugin.xml in Resources */,
 				302D95F214D2391D003F00A1 /* MainViewController.xib in Resources */,
 				0207DA581B56EA530066E2B4 /* Images.xcassets in Resources */,
 				6AFF5BF91D6E424B00AB3073 /* CDVLaunchScreen.storyboard in Resources */,
