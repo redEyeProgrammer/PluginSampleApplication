@@ -18,29 +18,58 @@
  */
 var app = {
     // Application Constructor
-    initialize: function() {
-        document.addEventListener('deviceready', this.onDeviceReady.bind(this), false);
-    },
-
+initialize: function () {
+    this.bindEvents();
+},
+    // Bind Event Listeners
+    //
+    // Bind any events that are required on startup. Common events are:
+    // 'load', 'deviceready', 'offline', and 'online'.
+bindEvents: function () {
+    document.addEventListener('deviceready', this.onDeviceReady, false);
+    
+},
     // deviceready Event Handler
     //
-    // Bind any cordova events here. Common events are:
-    // 'pause', 'resume', etc.
-    onDeviceReady: function() {
-        this.receivedEvent('deviceready');
-    },
-
+    // The scope of 'this' is the event. In order to call the 'receivedEvent'
+    // function, we must explicitly call 'app.receivedEvent(...);'
+onDeviceReady: function() {
+    //app.receivedEvent('deviceready');
+    document.getElementById("bookmarkBtn").onclick = app.addBookmark;
+},
+    
     // Update DOM on a Received Event
-    receivedEvent: function(id) {
-        var parentElement = document.getElementById(id);
-        var listeningElement = parentElement.querySelector('.listening');
-        var receivedElement = parentElement.querySelector('.received');
-
-        listeningElement.setAttribute('style', 'display:none;');
-        receivedElement.setAttribute('style', 'display:block;');
-
-        console.log('Received Event: ' + id);
+receivedEvent: function(id) {
+    var parentElement = document.getElementById(id);
+    var listeningElement = parentElement.querySelector('.listening');
+    var receivedElement = parentElement.querySelector('.received');
+    
+    listeningElement.setAttribute('style', 'display:none;');
+    receivedElement.setAttribute('style', 'display:block;');
+    
+    console.log('Received Event: ' + id);
+},
+    
+addBookmark: function() {
+    console.log("Called add bookmark");
+    var win = function(d) {
+        console.log("Bookmark added!");
+    };
+    var fail = function(e) {
+        console.log(e)
     }
+    var bookmark = document.getElementById("bookmark").value
+    if (!document.getElementById("bookmark").value) {
+        alert("Text Empty");
+    } else {
+        cordova.exec(win, fail, "MyHybridPlugin", "addBookmark", [bookmark]);
+        alert("BookMark Added");
+        document.getElementById("bookmark").value = "";
+        
+    }
+}
+    
+    
 };
 
 app.initialize();

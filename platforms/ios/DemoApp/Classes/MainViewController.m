@@ -57,7 +57,7 @@
 {
     // Releases the view if it doesn't have a superview.
     [super didReceiveMemoryWarning];
-
+    
     // Release any cached data, images, etc that aren't in use.
 }
 
@@ -67,7 +67,7 @@
 {
     // View defaults to full size.  If you want to customize the view's size, or its subviews (e.g. webView),
     // you can do so here.
-
+    
     [super viewWillAppear:animated];
 }
 
@@ -84,41 +84,47 @@
     // e.g. self.myOutlet = nil;
 }
 
-/* Comment out the block below to over-ride */
-
-/*
-- (UIWebView*) newCordovaViewWithFrame:(CGRect)bounds
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
-    return[super newCordovaViewWithFrame:bounds];
-}
-
-// CB-12098
-#if __IPHONE_OS_VERSION_MAX_ALLOWED < 90000  
-- (NSUInteger)supportedInterfaceOrientations
-#else  
-- (UIInterfaceOrientationMask)supportedInterfaceOrientations
-#endif
-{
-    return [super supportedInterfaceOrientations];
-}
-
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation 
-{
+    // Return YES for supported orientations
     return [super shouldAutorotateToInterfaceOrientation:interfaceOrientation];
 }
 
-- (BOOL)shouldAutorotate 
-{
-    return [super shouldAutorotate];
-}
-*/
+/* Comment out the block below to over-ride */
+
+/*
+ - (UIWebView*) newCordovaViewWithFrame:(CGRect)bounds
+ {
+ return[super newCordovaViewWithFrame:bounds];
+ }
+ */
+
+/* Comment out the block below to over-ride */
+
+/*
+ 
+ - (void) webViewDidStartLoad:(UIWebView*)theWebView
+ {
+ return [super webViewDidStartLoad:theWebView];
+ }
+ 
+ - (void) webView:(UIWebView*)theWebView didFailLoadWithError:(NSError*)error
+ {
+ return [super webView:theWebView didFailLoadWithError:error];
+ }
+ 
+ - (BOOL) webView:(UIWebView*)theWebView shouldStartLoadWithRequest:(NSURLRequest*)request navigationType:(UIWebViewNavigationType)navigationType
+ {
+ return [super webView:theWebView shouldStartLoadWithRequest:request navigationType:navigationType];
+ }
+ */
 
 @end
 
 @implementation MainCommandDelegate
 
 /* To override the methods, uncomment the line in the init function(s)
-   in MainViewController.m
+ in MainViewController.m
  */
 
 #pragma mark CDVCommandDelegate implementation
@@ -138,7 +144,7 @@
 @implementation MainCommandQueue
 
 /* To override, uncomment the line in the init function(s)
-   in MainViewController.m
+ in MainViewController.m
  */
 - (BOOL)execute:(CDVInvokedUrlCommand*)command
 {
